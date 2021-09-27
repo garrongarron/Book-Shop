@@ -8,6 +8,7 @@
 }
 body{
     font-family: sans-serif;
+    font-size: 18px;
 }
 header{
     background-color: white;
@@ -20,27 +21,28 @@ header{
     box-shadow: 0px 0px 4px #333;
 }
 .container{
-    width: 100vw;
+    /* width: 90%; */
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    
 }
 main{
     margin-top: 10vh;
-    /* background-color: gray; */
-    height: 150vh;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    position: relative;
     margin-left: 300px;
-    right: 0;
-    position: absolute;
 }
 section{
     top: 10vh;
-    position: fixed;
-    width: 25%;
-    min-width: 300px;
+    max-width: 300px;
     padding: 10px;
     background-color: rgb(209, 209, 209);
-    height: 100%;
+    height: 90vh;
     display: flex;
     flex-flow: column;
+    position: fixed;
 }
 aside{
     /* background-color: indigo; */
@@ -106,11 +108,21 @@ footer ul >li{
 header ul{
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     height: 100%;
 }
-header ul > li{}
+header ul > li{
+    text-align: center;
+    /* min-width: 150px; */
+}
+header ul > li.right{
+    margin-left: auto
+}
+header ul > li.logo{
+    min-width: 300px;
+}
+
 header ul > li > a{
     text-decoration: none;
     /* background-color: rgb(231, 228, 228);; */
@@ -123,13 +135,27 @@ header ul > li > a:hover{
     /* border-bottom: 1px solid grey; */
     color: lightsalmon;
 }
+header input{
+    background-color: #eee;    
+    border: none;
+    padding: 7px;
+    border-radius: 10px;
+    color: grey;
+    font-size: 18px;
+    border: 1px solid #eee;
+}
+header input:focus{
+    outline: none;
+    border: 1px solid gray;
+}
 
 /* section */
 section ul{
     padding: 0 20px;
     background-color: white;
     overflow-y: scroll;
-    margin-bottom: 50px;
+    padding-bottom: 20px;
+    /* margin-bottom: 50px; */
 }
 section ul > li{
     /* height: 8vh; */
@@ -142,6 +168,7 @@ section ul > li{
     align-items: center;
     width: 100%;
 }
+
 .chapter{
     padding-left: 10px;
 }
@@ -173,6 +200,16 @@ aside .img{
 }
 
 
-.contnet{
+main .contnet{
     padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+main .contnet p{
+    color: grey;
+}
+main .video{
+    width: 80%;
+    margin:15px auto;
+    text-align: center;
 }
