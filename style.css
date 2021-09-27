@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    cursor: default;
+    user-select: none;
+}
+header{
+    background-color: aqua;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 1vw;
+}
+.container{
+    width: 100vw;
+    box-sizing: border-box;
+}
+main{
+    margin-top: 10vh;
+    background-color: gray;
+    height: 150vh;
+    width: 75%;
+    right: 0;
+    position: absolute;
+    padding: 2vw;
+}
+section{
+    top: 0;
+    position: fixed;
+    margin-top: 10vh;
+    width: 25%;
+    padding: 10px;
+    background-color: green;
+    height: 100vh;
+}
+aside{
+    background-color: indigo;
+    position: fixed;
+    top: 25vh;
+    right: 0;
+    height: 50vh;
+}
+.info{
+    background-color: rosybrown;
+    height: 200px;
+    width: 100%;
+}
+
+/*header*/
+header ul{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+header ul > li{
+    
+}
+
+/* section */
+section ul{
+    padding: 2vh;
+}
+section ul > li{
+    height: 5vh;
+}
+
+/* aside*/
+aside ul{
+    padding: 1vw;
+    display: flex;
+    flex-flow: column;
+}
+aside ul > li{
+    padding: 5px;
+}
+aside .img{
+    width: 35px;
+    height: 35px;
+    background-color: red;
+}
+
