@@ -6,6 +6,9 @@
     cursor: default;
     /* user-select: none; */
 }
+.hide{
+    display: none !important;
+}
 .center{
     text-align: center;
     width: 100%;
@@ -36,18 +39,23 @@ main{
     padding-bottom: 50px;
     min-height: 100vh;
     position: relative;
-    margin-left: 300px;
+    /* margin-left: 300px; */
+    /* right: 0; */
     width: 100%;
+    overflow-x: hidden;
 }
 section{
-    top: 10vh;
-    max-width: 300px;
+    width: 300px;
     padding: 10px;
-    background-color: rgb(209, 209, 209);
     height: 90vh;
     display: flex;
     flex-flow: column;
     position: fixed;
+    top: 10vh;
+}
+.left{
+    min-width: 300px;
+    background-color: rgb(209, 209, 209);
 }
 aside{
     /* background-color: indigo; */
@@ -63,10 +71,11 @@ aside{
     box-shadow: 8px 4px 4px rgb(149, 149, 149);
 }
 footer{
-    width: 100%;;
+    /* width: 100%;; */
     position: absolute;
     bottom: 0;
     padding: 0 15px;
+    width: 100%;
 }
 footer ul{
     display: flex;
@@ -117,12 +126,16 @@ header ul{
     align-items: center;
     height: 100%;
 }
-header ul > li{
+header ul li{
     text-align: center;
-    /* min-width: 150px; */
+    min-width: 150px;
 }
-header ul > li.right{
-    margin-left: auto
+header ul li#buttons,
+header ul li#buttons ul{
+    width: 100%;
+}
+header ul li#buttons ul li.right{
+    margin-left: auto;
 }
 header ul > li.logo{
     min-width: 300px;
@@ -152,6 +165,9 @@ header input{
 header input:focus{
     outline: none;
     border: 1px solid gray;
+}
+header ul > li.hamburger{
+    display: none;
 }
 
 /* section */
@@ -204,14 +220,14 @@ aside .img{
     border: 1px solid gray;
 }
 
-
-main .contnet{
+/*main*/
+main .content{
     padding: 15px;
     padding-left: 50px;
     padding-right: 50px;
-    position: relative;
+    min-height: 100vh;
 }
-main .contnet p{
+main .content p{
     color: grey;
 }
 main .video{

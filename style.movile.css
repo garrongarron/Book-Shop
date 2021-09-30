@@ -1,0 +1,71 @@
+@media (max-width: 900px) {
+    header{
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    header ul,
+    header li#buttons > ul
+    {
+        flex-flow: column;
+    }
+    .logo{
+        height: 10vh;
+        line-height: 10vh;
+        background-color: black;
+        color: gray;
+        width: 100%;
+    }
+
+    header ul > li.hamburger{
+        /* background-color: rosybrown; */
+        box-shadow: 0px 4px 2px gray;
+    }
+    header ul > li.hamburger,
+    header li#buttons > ul > li{
+        height: 10vh;
+        line-height: 10vh;
+        width: 100%;
+        padding: 0 15px;
+        display: block;
+    }
+    header li#buttons > ul > li.right{
+        margin-left: 0px;
+    }
+    header li#buttons > ul > li > label{
+        display: none;
+    }
+    header li#buttons > ul > li > input{
+        width: 100%;
+        text-align: center;
+    }
+    /*ASIDE*/
+    aside{
+        display: none;
+    }
+    /* LEFT*/
+    .left{
+        display: none;
+    }
+    /*MAIN*/
+    main{
+        margin-top: 20vh;
+    }
+    main .content{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    main .video {
+        width: 100%;
+        margin: 10px 0px ;
+    }
+    main .video iframe{
+        width: 100%;
+        height: 200px;
+    }
+    /*FOOTER*/
+    footer{
+        position: fixed;
+        bottom: 0;
+    }
+}

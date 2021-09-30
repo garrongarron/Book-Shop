@@ -16,14 +16,14 @@ class Toggle {
         this.yt.innerHTML = `<div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/StTqXEQ2l-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
     }
     edit() {
-        document.querySelector('.contnet').innerHTML = ''
-        document.querySelector('.contnet').appendChild(this.textArea)
+        document.querySelector('.content').innerHTML = ''
+        document.querySelector('.content').appendChild(this.textArea)
         this.textArea.value = this.data
         console.log('edit');
     }
     preview() {
         var html = this.converter.makeHtml(this.data);
-        document.querySelector('.contnet').innerHTML = html
+        document.querySelector('.content').innerHTML = html
         document.querySelectorAll('a').forEach(e=>{
             if(e.getAttribute('title')=='YT'){
                 console.log(e.innerText);
