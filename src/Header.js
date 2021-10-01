@@ -1,4 +1,5 @@
 import Component from "../js/Component.js"
+import eventBus from "./EventBus.js"
 
 class Header extends Component {
     beforeAppendChild(parent){
@@ -21,17 +22,25 @@ class Header extends Component {
         }
         this.flag = !this.flag  
     }
+    loggin1(e){
+        eventBus.dispatch('goto','Book')
+        e.preventDefault()
+    }
+    landing(){
+        eventBus.dispatch('goto','Landing')
+        e.preventDefault()
+    }
     template() {
         return `
-        <header>
+        <header class="gradient">
             <ul>
-                <li class="logo">Logo</li>
+                <li class="logo">Tu juego a Juicio</li>
                 <li class="hamburger" click="toggle">Menu</li>
                 <li id="buttons">
                     <ul>
                         <li><label>Broweser Library: </label><input type="text" placeholder="Book title..."></li>
-                        <li class="right"><a href="#">My Library</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li class="right" click="landing"><a href="#">My Library</a></li>
+                        <li click="loggin1"><a href="#">Profile</a></li>
                     </ul>
                 </il>
                 

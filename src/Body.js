@@ -1,31 +1,33 @@
 import Component from "../js/Component.js"
 import AssideComponent from "./AssideComponent.js";
 import Header from "./Header.js";
-import Content from './Content.js'
-import Info from "./Info.js";
-import ChapterList from "./ChapterList.js";
-import Footer from "./Footer.js";
+// import Content from './Content.js'
+// import Info from "./Info.js";
+// import ChapterList from "./ChapterList.js";
+// import Footer from "./Footer.js";
+import Book from "./Book.js";
+import Landing from "./Landing.js";
+import eventBus from "./EventBus.js";
 
 class Body extends Component {
+    setState() {
+        eventBus.subscribe('goto',(page)=>{
+            this.state.page = page
+            localStorage.setItem('page', JSON.stringify(page));
+            this.setNewState(this.state)
+        })
+        return {
+            page: JSON.parse(localStorage.getItem('page')) || 'Book'
+        }
+    }
     setChildComponent() {
-        return [Header, AssideComponent, Content, Info, ChapterList, Footer];
+        return [Book, Header, AssideComponent, Landing];
     }
     template() {
         return `
     <div>
         <Header></Header>
-        <div class="container">
-            <div class="left">
-                <section>
-                    <Info></Info>
-                    <ChapterList></ChapterList>
-                </section>
-            </div>
-            <main>
-                <Content></Content>
-                <Footer></Footer>
-            </main>
-        </div>
+        <${this.state.page}></${this.state.page}>
         <AssideComponent></AssideComponent>
     </div>`
     }
