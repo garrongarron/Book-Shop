@@ -59,7 +59,7 @@ class Component {
         this.node.parentNode.replaceChild(this.exec(true), old)//?
         this.afterUpdate(this.node.parentNode)
     }
-    beforeAppendChild() {
+    beforeAppendChild(parentNode) {
 
     }
     afterUpdate() {

@@ -29,6 +29,7 @@ class Header extends Component {
     landing(){
         eventBus.dispatch('goto','Landing')
         e.preventDefault()
+        e.stopPropagation()
     }
     template() {
         return `
@@ -39,7 +40,7 @@ class Header extends Component {
                 <li id="buttons">
                     <ul>
                         <li><label>Broweser Library: </label><input type="text" placeholder="Book title..."></li>
-                        <li class="right" click="landing"><a href="#">My Library</a></li>
+                        <li class="right" click="landing"><a>My Library</a></li>
                         <li click="loggin1"><a href="#">Profile</a></li>
                     </ul>
                 </il>

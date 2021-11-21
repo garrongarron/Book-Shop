@@ -421,11 +421,19 @@ div.landing-footer div > ul li > ul{
     display: flex;
 }
 div.landing-footer div > ul li > ul li{
-    background-color: red;
+    /* background-color: red; */
     width: 50px !important;
     height: 50px !important;
     border-radius: 50%;
     line-height: 50px;
     text-align: center;
     margin-right: 5px;
+    color: chartreuse;
+}
+
+.reading{
+    background-color: burlywood;
+}
+*[data-tts]{
+    cursor: pointer;
 }

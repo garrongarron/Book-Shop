@@ -1,3 +1,5 @@
+import dataHandler from "./data/DataHandler.js";
+
 var md = '[**Showdown**](http://www.showdownjs.com) is *great*\n' +
     'because:\n\n' +
     ' - it\'s easy to use\n' +
@@ -6,7 +8,8 @@ var md = '[**Showdown**](http://www.showdownjs.com) is *great*\n' +
 class Toggle {
     constructor() {
         this.converter = new Showdown.converter();
-        this.data = md
+        this.data = null
+        this.dataPrev = null
         this.textArea = document.createElement('textarea')
         this.textArea.classList.add('editor')
         this.textArea.addEventListener('change',(e)=>{
@@ -15,6 +18,9 @@ class Toggle {
         this.yt = document.createElement('div')
         this.yt.innerHTML = `<div class="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/StTqXEQ2l-Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
     }
+    init(content){
+        this.data = content
+    }
     edit() {
         document.querySelector('.content').innerHTML = ''
         document.querySelector('.content').appendChild(this.textArea)
@@ -22,8 +28,12 @@ class Toggle {
         console.log('edit');
     }
     preview() {
+        if(!this.data) return;
         var html = this.converter.makeHtml(this.data);
         document.querySelector('.content').innerHTML = html
+        document.querySelectorAll('.content *').forEach(node=>{
+            node.setAttribute('data-tts', 1)
+        })
         document.querySelectorAll('a').forEach(e=>{
             if(e.getAttribute('title')=='YT'){
                 console.log(e.innerText);
@@ -34,8 +44,9 @@ class Toggle {
             }
             // e.setAttribute('target', '_black')
         })
-
-        
+        if(this.dataPrev === this.data) return;
+        dataHandler.update(this.data)
+        this.dataPrev = this.data
     }
 }
 
